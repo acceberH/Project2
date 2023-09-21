@@ -1,0 +1,59 @@
+body {
+    background-color: #000;
+    min-height: 800vh;
+}
+
+h1, h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 48px;
+    color: white;
+    text-align: center; /* Adjusted to center text */
+    padding: 20px; /* Added padding for spacing */
+}
+p{
+    font-family: 'Kalam', cursive;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+
+}
+
+.artwork-container, .artwork-container2,.artwork-container3 {
+    position: relative;
+    height: 600px; 
+    width: 600px; 
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.original-artwork, .new-creation {
+    position: absolute;
+    top: 0;  
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    transition: opacity 0.5s ease;
+    max-width: 100%;  
+    max-height: 100%;  
+    margin: auto; 
+}
+
+.new-creation {
+    opacity: 0;
+}
+
+.artwork-container:hover .original-artwork, 
+.artwork-container2:hover .original-artwork,.artwork-container3:hover .original-artwork {
+    opacity: 0;
+}
+
+.artwork-container:hover .new-creation, 
+.artwork-container2:hover .new-creation,
+.artwork-container3:hover .new-creation {
+    opacity: 1;
+}
+
+.artwork-container img, .artwork-container2 img, .artwork-container3 img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,91 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #FFF;
+    font-family: 'Kalam', cursive;
+    font-size: 48px;
+
+    
+}
+
+.flip-container {
+    perspective: 1000px;
+}
+
+.flipper {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.front {
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.fade-out {
+    animation-name: fadeOut;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;  /* duration of fade out */
+    animation-delay: 3s;  /* starts after 3 seconds */
+    animation-fill-mode: forwards; /* makes sure it remains invisible after animation ends */
+}
+.side-link {
+    position: fixed;    /* This will fix the position of the link on the viewport */
+    bottom: 0;          /* This will place the link at the bottom */
+    right: 0;           /* This will place the link on the right side of the screen */
+    font-size: 32px;    /* Adjust the font size to your preference */
+
+    padding: 10px 20px; /* Add some padding for better appearance */
+    color: #fff;       /* Change the text color */
+    text-decoration: none;  /* Remove underline from the link */
+    animation: blink 1s infinite;
+    
+}
+@keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
